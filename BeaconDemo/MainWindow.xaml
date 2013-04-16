@@ -1,0 +1,13 @@
+﻿<Window x:Class="BeaconDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Beacon Demo" Height="337" Width="525" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <GroupBox Header="Server" Height="274" HorizontalAlignment="Left" Margin="12,12,0,0" Name="groupBox1" VerticalAlignment="Top" Width="247">
+            <Button Content="Start new beacon" Height="38" HorizontalAlignment="Center" Name="serverButton" VerticalAlignment="Center" Width="113" Click="serverButton_Click" />
+        </GroupBox>
+        <GroupBox Header="Client" Height="274" HorizontalAlignment="Left" Margin="279,12,0,0" Name="groupBox2" VerticalAlignment="Top" Width="203">
+            <Button Content="Open Connection Window" Height="38" HorizontalAlignment="Center" Name="clientButton" VerticalAlignment="Center" Click="clientButton_Click" />
+        </GroupBox>
+    </Grid>
+</Window>

@@ -1,0 +1,32 @@
+﻿<Window x:Class="BeaconWpfDialog.ConnectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Name="Me"
+        Title="Connect to server" Height="324" Width="656" WindowStartupLocation="CenterScreen"
+        Closed="ConnectionWindow_OnClosed">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="378*" />
+            <ColumnDefinition Width="321*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="157*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label HorizontalAlignment="Left" Margin="12,12,12,12" FontSize="20" VerticalAlignment="Top" Name="messageLabel">Connect to server</Label>
+        <Label Grid.Row="1" HorizontalAlignment="Left" Margin="12,5,12,5" VerticalAlignment="Top">Pick from the list</Label>
+        <Label Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="12,5,0,0" VerticalAlignment="Top">Or enter manually</Label>
+        <ListBox Grid.Row="2" HorizontalAlignment="Stretch" Margin="12,5,12,5" VerticalAlignment="Stretch"  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                 ItemsSource="{Binding BeaconsList, ElementName=Me}"
+                 SelectedItem="{Binding SelectedBeacon, ElementName=Me}"
+                 Name="pickList" MouseDoubleClick="PickList_OnMouseDoubleClick"/>
+        <Label Content="Host" HorizontalAlignment="Left" Margin="12,6,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" />
+        <Label Content="Port" HorizontalAlignment="Left" Margin="12,46,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" />
+        <TextBox Grid.Column="1" Grid.Row="2" Height="23" HorizontalAlignment="Left" Margin="72,7,0,0" VerticalAlignment="Top" Width="190" Text="{Binding HostName, ElementName=Me, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="72,46,0,0" VerticalAlignment="Top" Width="68" Grid.Column="1" Grid.Row="2" Text="{Binding PortNumber, ElementName=Me, UpdateSourceTrigger=PropertyChanged}" />
+        <Button Content="Cancel" HorizontalAlignment="Right" Margin="0,12,12,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Grid.Row="3" Click="Button_Click_1" />
+        <Button IsEnabled="{Binding InputComplete, ElementName=Me}" Content="OK" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" Margin="12,12,93,12" VerticalAlignment="Top" Width="75" IsDefault="True" Click="Button_Click" />
+    </Grid>
+</Window>
