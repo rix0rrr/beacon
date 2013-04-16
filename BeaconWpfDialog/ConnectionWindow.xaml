@@ -26,7 +26,7 @@
         <Label Content="Port" HorizontalAlignment="Left" Margin="12,46,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" />
         <TextBox Grid.Column="1" Grid.Row="2" Height="23" HorizontalAlignment="Left" Margin="72,7,0,0" VerticalAlignment="Top" Width="190" Text="{Binding HostName, ElementName=Me, UpdateSourceTrigger=PropertyChanged}"/>
         <TextBox Height="23" HorizontalAlignment="Left" Margin="72,46,0,0" VerticalAlignment="Top" Width="68" Grid.Column="1" Grid.Row="2" Text="{Binding PortNumber, ElementName=Me, UpdateSourceTrigger=PropertyChanged}" />
-        <Button Content="Cancel" HorizontalAlignment="Right" Margin="0,12,12,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Grid.Row="3" Click="Button_Click_1" />
+        <Button Content="Cancel" HorizontalAlignment="Right" Margin="0,12,12,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Grid.Row="3" Click="Button_Click_1" IsCancel="True" />
         <Button IsEnabled="{Binding InputComplete, ElementName=Me}" Content="OK" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" Margin="12,12,93,12" VerticalAlignment="Top" Width="75" IsDefault="True" Click="Button_Click" />
     </Grid>
 </Window>
