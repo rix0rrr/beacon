@@ -43,6 +43,8 @@ Clients can find beacons using a `Probe`:
 
     probe.Stop();
 
+A WPF dialog is included that you can present to users to let them pick a server.
+
 ## Help wanted
 
 This repository currently contains a simple C# implementation of the *Beacon* protocol. Implementations in other languages and for other platforms (Android, iOS, C++) are very welcome, as well as improvements to the protocol.
