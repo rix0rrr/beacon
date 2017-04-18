@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("BeaconWpfDialog")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("Rico Huijbers")]
 [assembly: AssemblyProduct("BeaconWpfDialog")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2013")]
+[assembly: AssemblyCopyright("Copyright 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
