@@ -18,7 +18,6 @@ namespace BeaconLib
     {
         internal const int DiscoveryPort = 35891;
         private readonly UdpClient udp;
-        private bool stopped;
  
         public Beacon(string beaconType, ushort advertisedPort)
         {
@@ -40,14 +39,15 @@ namespace BeaconLib
             }
         }
 
-        public void Start() 
+        public void Start()
         {
+            Stopped = false;
             udp.BeginReceive(ProbeReceived, null);
         }
 
         public void Stop()
         {
-            stopped = true;
+            Stopped = true;
         }
 
         private void ProbeReceived(IAsyncResult ar)
@@ -66,7 +66,7 @@ namespace BeaconLib
                 udp.Send(responseData, responseData.Length, remote);
             }
 
-            if (!stopped) udp.BeginReceive(ProbeReceived, null);
+            if (!Stopped) udp.BeginReceive(ProbeReceived, null);
         }
 
         internal static bool HasPrefix<T>(IEnumerable<T> haystack, IEnumerable<T> prefix)
@@ -107,8 +107,9 @@ namespace BeaconLib
             get { return Dns.GetHostName(); }
         }
 
-        public string BeaconType { get; private set; } 
+        public string BeaconType { get; private set; }
         public ushort AdvertisedPort { get; private set; }
+        public bool Stopped { get; private set; }
 
         public string BeaconData { get; set; }
 
