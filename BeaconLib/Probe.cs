@@ -42,7 +42,7 @@ namespace BeaconLib
             {
                 udp.AllowNatTraversal(true);
             }
-            catch (SocketException ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine("Error switching on NAT traversal: " + ex.Message);
             }
@@ -86,7 +86,15 @@ namespace BeaconLib
         {
             while (running)
             {
-                BroadcastProbe();
+                try
+                {
+                    BroadcastProbe();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex);
+                }
+
                 waitHandle.WaitOne(2000);
                 PruneBeacons();
             }
@@ -137,7 +145,14 @@ namespace BeaconLib
 
         public void Dispose()
         {
-            Stop();
+            try
+            {
+                Stop();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
         }
     }
 }
