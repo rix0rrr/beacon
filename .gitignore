@@ -2,3 +2,7 @@
 /*.user
 bin
 obj
+RELEASING.txt
+*.nupkg
+packages/
+.vs
